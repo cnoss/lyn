@@ -1,0 +1,409 @@
+
+@media only screen and (min-width: $vp-xlarge) {
+  .header, .page, .footer{
+    max-width: $vp-xlarge;
+  }
+}
+
+// Header
+// ------------------------------------------------------------------------- //
+.header {
+  position: fixed;
+  z-index: -10;
+  top: 0;
+
+  width: 100vw;
+  height: 100vh;
+  padding: $m;
+
+
+  &__content {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    width: 100%;
+    padding-bottom: $l;
+    @media only screen and (min-width: $vp-medium)  {
+      background-color: $cs-beige-dark;
+      padding:$m;
+
+      &  *{
+        color: #fff;
+      }
+    }
+  }
+
+  &__image{
+    display: none;
+  }
+
+  &__title {
+    max-width: 20 * $m;
+    margin-bottom: $xs;
+
+    a {
+      font-weight: $fw-medium;
+      text-decoration: none;
+      color: $black;
+    }
+  }
+
+  &__subtitle {
+    font-weight: 400;
+    max-width: 20 * $m;
+    opacity: $op-medium;
+  }
+
+  &__tagline {
+    flex-grow: 1;
+    margin-bottom: $xl;
+  }
+
+  &::before {
+    position: absolute;
+    z-index: 0;
+    top: 50%;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    content: '';
+    background: linear-gradient(0deg, rgba(255,255,255,.8), rgba(9,9,121,0));
+  }
+
+  .more {
+    text-align: center;
+  }
+
+  @media (orientation: landscape) {
+    background-image: url(../images/hero/nina-schoppmann-osteopathie-landscape.jpg);
+  }
+
+  @media only screen and (min-width: $vp-medium)  {
+    background-image: none;
+    display: grid;
+    grid-template-columns: 50vw 1fr;
+    grid-auto-rows: 50vw;
+    padding: 0;
+
+    .more{
+      display: none;
+    }
+
+    &__image{
+      display: block;
+    }
+  
+  }
+
+  @media only screen and (min-width: $vp-large)  {
+    grid-template-columns: 33.3vw 33.3vw 1fr;
+    grid-auto-rows: 33vw;
+
+    &__image{
+      grid-column: 2 / span 2;
+      img{
+        width: 100%;
+        height: $vp-xlarge / 3;
+        object-position: center -150px;
+        object-fit: cover;
+      }
+    }
+  }
+
+  @media only screen and (min-width: $vp-xlarge) {
+    grid-template-columns: $vp-xlarge / 2  $vp-xlarge / 2;
+    grid-auto-rows: $vp-xlarge / 2;
+    left: calc(calc(100vw/2) - #{$vp-xlarge / 2});
+  
+    &__image{
+      grid-column: 2 / span 2;
+      img{
+        width: 100%;
+        height: $vp-xlarge / 2;
+        object-position: center;
+        object-fit: cover;
+      }
+    }
+  }
+}
+
+
+// Contact
+// ------------------------------------------------------------------------- //
+
+.contact {
+  margin-bottom: $m;
+
+  &__item {
+    &--is-hidden {
+      display: none;
+    }
+
+    &--with-seperator {
+      margin-bottom: $s;
+    }
+  }
+}
+
+
+
+// Memberships
+// ------------------------------------------------------------------------- //
+
+.membership {
+  text-align: center;
+  &-grid {
+    display: grid;
+
+    grid-template-columns: 50% 50%;
+
+    &__item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: $m;
+    }
+  }
+}
+
+
+// Page (Main Content)
+// ------------------------------------------------------------------------- //
+.page {
+  margin-top: 100vh;
+  overflow: hidden;
+  @media only screen and (min-width: $vp-medium)  {
+    margin-top: 50vw;
+    display: grid;
+    grid-template-columns: 50vw 1fr;
+    padding: 0;
+  }
+  @media only screen and (min-width: $vp-large)  {
+    margin-top: 33vw;
+    grid-template-columns: 33.3vw 33.3vw 1fr;
+    grid-auto-rows: 33vw;
+  }
+
+  @media only screen and (min-width: $vp-xlarge) {
+    margin-top: $vp-xlarge / 2;
+    margin-left: calc(calc(100vw/2) - #{$vp-xlarge / 2});
+    grid-template-columns: $vp-xlarge / 3  $vp-xlarge / 3  $vp-xlarge / 3;
+    grid-auto-rows: $vp-xlarge / 3;
+
+  }
+}
+
+
+// Footer
+// ------------------------------------------------------------------------- //
+
+.footer {
+  padding: $m;
+  border-top: solid 2px $cs-beige-medium-light;
+  background-color: $cs-beige-light;
+
+
+  &__copyright {
+    padding-top: $m;
+
+    border-top: solid 1px #fff;
+
+    &-year::after {
+      display: inline-block;
+      margin-right: $xs;
+      margin-left: $xs;
+
+      content: '//';
+
+      color: $seperator-color;
+    }
+  }
+
+  @media only screen and (min-width: $vp-xlarge) {
+    grid-template-columns: $vp-xlarge / 3  $vp-xlarge / 3  $vp-xlarge / 3;
+    grid-auto-rows: $vp-xlarge / 3;
+    margin-left: calc(calc(100vw/2) - #{$vp-xlarge / 2});
+  }
+}
+
+
+// Course Item
+// ------------------------------------------------------------------------- //
+
+.course-item {
+  &__title {
+    font-weight: $fw-normal;
+  }
+  &__title::before {
+    display: inline-block;
+
+    content: '«';
+  }
+  &__title::after {
+    display: inline-block;
+
+    content: '»';
+  }
+  &__year::before {
+    display: inline-block;
+    margin-right: $xs / 2;
+    margin-left: $xs / 2;
+
+    content: '//';
+
+    color: $seperator-color;
+  }
+}
+
+// Image Block
+// ------------------------------------------------------------------------- //
+
+.image-block {
+  position: sticky;
+  z-index: -1;
+  top: 0;
+  overflow: hidden;
+  max-height: 100vh;
+
+  background-color: #fff;
+
+  @media only screen and (min-width: $vp-medium) {
+    height: 50vw;
+    border-top: solid 2px $cs-beige-medium-light;
+  }
+
+  @media only screen and (min-width: $vp-large)  {
+    height: 33.3vw;
+  }
+
+  &--is-square{
+    & > img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &--focus-right{
+    & > img{
+      object-position: right;
+    }
+  }
+
+
+  &--2-columns {
+    
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    column-gap: $xs;
+    row-gap: $xs;
+    height: 100%;
+
+    & > img{
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+
+// Content Block
+// ------------------------------------------------------------------------- //
+
+.content-block {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  overflow-y: auto;
+  z-index: 2;
+  padding: $m;
+  padding-top: $l;
+  padding-bottom: $xl;
+
+  background-color: #fff;
+
+  &--with-background{
+    background-color: $cs-green-light;
+  }
+
+  &--with-background-beige{
+    background-color: $cs-beige-dark;
+    color: #fff;
+  }
+
+  &--is-centered{
+    display: flex;
+    align-items: center;
+  }
+
+  &--from-medium{
+    display: none;
+  }
+
+  &--from-large{
+    display: none;
+  }
+
+  @media only screen and (min-width: $vp-medium) {
+    border-top: solid 2px $cs-beige-medium-light;
+    padding: $l;
+
+    &--from-medium{
+      display:  flex;
+    }
+  }
+
+  @media only screen and (min-width: $vp-large) {
+    border-bottom: solid $l transparent;
+
+    &--from-large{
+      display: flex;
+    }
+  }
+}
+
+// Quote
+// ------------------------------------------------------------------------- //
+
+.quote{
+  font-family: $font-family-serif;
+  font-size: $l;
+  line-height: $lh-tight;
+}
+
+
+// Video
+// ------------------------------------------------------------------------- //
+
+.video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+
+  & embed,
+  & iframe,
+  & object,
+  & video {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+}
+
+
+
+// Gutschein
+// ------------------------------------------------------------------------- //
+.gutschein{
+  background-color: rgba(255,140,54,1);
+  color: #fff;
+  margin-bottom: 0;
+}

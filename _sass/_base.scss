@@ -1,0 +1,97 @@
+*{
+  box-sizing: border-box;
+}
+
+html, body{
+  font-family: $font-family-sans;
+  font-size: $base-font-size;
+  line-height: $lh-default;
+  font-weight: $fw-light; 
+  hyphens: auto;
+  color:$text-color;
+  scroll-behavior: smooth;
+  background-image: url("../images/bg-klein.png");
+}
+
+body{
+  background-color:$bg-color;
+}
+
+
+
+
+h1, h2, h3, h4{
+  line-height: $lh-tight;
+  font-weight: $fw-medium;
+  color: $headline-color;
+  hyphens: none;
+}
+
+h2, h3{
+  font-weight: $fw-medium;
+}
+
+h1, h2, h3, h4, p, blockquote{
+  margin-bottom: $m;
+}
+
+h1{
+  font-size: $xl;
+  &.anrede{
+    font-size: $l;
+  }
+}
+
+h2{
+  font-size: $l;
+}
+
+h3{
+  font-size: $m;
+}
+
+p{
+  font-size: $m;
+  margin-bottom: $xs;
+}
+
+p + h2{
+  margin-top: $l;
+}
+
+p + h3{
+  margin-top: $l;
+}
+
+img{
+  width: 100%;
+}
+
+a{
+  color: $cs-beige-dark;
+}
+
+header, main, footer{
+  max-width: $vp-medium;
+  margin: auto;
+
+}
+
+main section{
+  background-color: rgba(255,255,255,0.9);
+  padding: $xl $l;
+}
+
+header{
+  position: fixed;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: -10;
+}
+
+main{
+  margin-top: 100vh;
+  position: relative;
+  z-index: 10;
+}
