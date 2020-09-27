@@ -10,11 +10,11 @@ html, body{
   hyphens: auto;
   color:$text-color;
   scroll-behavior: smooth;
-  background-image: url("../images/bg-klein.png");
+  background-color: rgba(0,0,0,0.5);
 }
 
 body{
-  background-color:$bg-color;
+ // background-color:$bg-color;
 }
 
 
@@ -71,14 +71,14 @@ a{
   color: $cs-beige-dark;
 }
 
-header, main, footer{
+main, footer{
   max-width: $vp-medium;
   margin: auto;
 
 }
 
 main section{
-  background-color: rgba(255,255,255,0.9);
+  
   padding: $xl $l;
 }
 
